@@ -1,0 +1,26 @@
+name: Deploy Databricks Notebooks
+
+on:
+  push:
+    branches:
+      - main  # Kích hoạt khi có thay đổi trong nhánh 'main'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Verify Git Integration in Databricks
+        run: |
+          echo "Checking Databricks Git Integration..."
+          # Đảm bảo rằng Workspace đã tích hợp với Git repo
+          # Nếu cần, thêm lệnh xác nhận Git branch (thường được thực hiện thủ công trong UI Databricks)
+      
+      - name: Sync Databricks with Git Repository
+        run: |
+          echo "Triggering Git Sync in Databricks Workspace..."
+          # Nếu cần, bạn có thể sử dụng CLI Databricks để kích hoạt đồng bộ
+          # Hoặc xác nhận trạng thái đồng bộ hiện tại
